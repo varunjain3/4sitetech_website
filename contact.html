@@ -36,7 +36,8 @@
     <main>
         <div class="contact-bg"></div>
         <div class="container">
-            <div class="section-intro">
+            <!-- Added an ID to the top section for direct linking -->
+            <div id="contact-top" class="section-intro">
                 <h1>Contact Us</h1>
                 <p>We'd love to hear from you. Get in touch with our team to discuss how we can help your business thrive in the digital world.</p>
             </div>
@@ -112,8 +113,8 @@
                 </div>
             </div>
             
-            <!-- Map Section -->
-            <div class="map-section">
+            <!-- Map Section - Added an ID for proper linking -->
+            <div id="find-us" class="map-section">
                 <h2>Find Us</h2>
                 <div class="map-container">
                     <!-- Placeholder for map - would be replaced with actual map service implementation -->
@@ -122,59 +123,100 @@
             </div>
             
             <!-- FAQ Section -->
-            <div class="faq-section">
+            <div id="faq" class="faq-section">
                 <h2>Frequently Asked Questions</h2>
                 <div class="faq-container">
                     <div class="faq-item">
-                        <div class="faq-question">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
                             <h3>What services do you offer?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
+                            <div class="faq-icon">
+                                <i class="fas fa-plus"></i>
+                                <i class="fas fa-minus"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-1">
                             <p>We offer a wide range of technology solutions including cloud-based application development, AI development and integration, containerization, Python scripting, DevOps services, and more. You can view our complete service offerings on our <a href="services.html">Services page</a>.</p>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <div class="faq-question">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
                             <h3>How do I request a quote?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
+                            <div class="faq-icon">
+                                <i class="fas fa-plus"></i>
+                                <i class="fas fa-minus"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-2">
                             <p>You can request a quote by filling out the contact form on this page, calling us directly, or sending us an email. Please provide details about your project requirements so we can provide an accurate estimate.</p>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <div class="faq-question">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
                             <h3>Do you offer ongoing support?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
+                            <div class="faq-icon">
+                                <i class="fas fa-plus"></i>
+                                <i class="fas fa-minus"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-3">
                             <p>Yes, we provide ongoing maintenance and support for all our solutions. We offer various support packages to suit different business needs and can customize a support plan specifically for your requirements.</p>
                         </div>
                     </div>
                     
                     <div class="faq-item">
-                        <div class="faq-question">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
                             <h3>What is your typical project timeline?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
+                            <div class="faq-icon">
+                                <i class="fas fa-plus"></i>
+                                <i class="fas fa-minus"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-4">
                             <p>Project timelines vary depending on the scope and complexity of the work. Small projects may take 4-6 weeks, while larger enterprise solutions can take several months. We provide detailed timeline estimates during our project planning phase.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+                            <h3>Do you work with clients internationally?</h3>
+                            <div class="faq-icon">
+                                <i class="fas fa-plus"></i>
+                                <i class="fas fa-minus"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-5">
+                            <p>Absolutely! We work with clients globally and have experience delivering projects for businesses across North America, Europe, Asia, and Australia. Our team operates remotely and can accommodate different time zones to ensure smooth communication.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
+                            <h3>What technologies do you specialize in?</h3>
+                            <div class="faq-icon">
+                                <i class="fas fa-plus"></i>
+                                <i class="fas fa-minus"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-6">
+                            <p>Our team specializes in a wide range of technologies including Python, JavaScript/Node.js, React, TensorFlow, PyTorch, Docker, Kubernetes, AWS, Google Cloud, and Azure. We're constantly expanding our expertise to stay at the forefront of technology trends.</p>
                         </div>
                     </div>
                 </div>
             </div>
             
             <!-- Newsletter Section -->
-            <div class="newsletter-section">
+            <div id="newsletter" class="newsletter-section">
                 <div class="newsletter-content">
                     <h2>Stay Updated</h2>
                     <p>Subscribe to our newsletter to receive the latest news, updates, and tech insights.</p>
                     <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit" class="btn">Subscribe</button>
+                        <div class="newsletter-input-container">
+                            <input type="email" id="newsletter-email" name="newsletter-email" placeholder="Enter your email" aria-label="Email address for newsletter" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                            <button type="submit" class="btn">Subscribe</button>
+                        </div>
+                        <small class="newsletter-info">We respect your privacy and will never share your information.</small>
                     </form>
                 </div>
             </div>
@@ -208,9 +250,9 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
     
-    <!-- Additional JavaScript for FAQ toggles -->
+    <!-- Additional JavaScript for Contact Page - Fixed to prevent auto-scrolling to Find Us section -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // FAQ accordion functionality
@@ -219,25 +261,43 @@
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
                 const answer = item.querySelector('.faq-answer');
-                const icon = question.querySelector('i');
                 
-                // Initially hide all answers
+                // Set initial state
                 answer.style.display = 'none';
                 
-                question.addEventListener('click', () => {
-                    // Toggle answer visibility
-                    const isOpen = answer.style.display === 'block';
+                question.addEventListener('click', function() {
+                    // Check if this item is already active
+                    const isExpanded = question.getAttribute('aria-expanded') === 'true';
                     
-                    if (isOpen) {
-                        answer.style.display = 'none';
-                        icon.classList.remove('fa-chevron-up');
-                        icon.classList.add('fa-chevron-down');
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        const otherQuestion = otherItem.querySelector('.faq-question');
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        
+                        if (otherItem !== item) {
+                            otherQuestion.setAttribute('aria-expanded', 'false');
+                            otherItem.classList.remove('active');
+                            otherAnswer.style.display = 'none';
+                        }
+                    });
+                    
+                    // Toggle current item
+                    if (isExpanded) {
+                        question.setAttribute('aria-expanded', 'false');
                         item.classList.remove('active');
+                        answer.style.display = 'none';
                     } else {
-                        answer.style.display = 'block';
-                        icon.classList.remove('fa-chevron-down');
-                        icon.classList.add('fa-chevron-up');
+                        question.setAttribute('aria-expanded', 'true');
                         item.classList.add('active');
+                        answer.style.display = 'block';
+                    }
+                });
+                
+                // Keyboard accessibility
+                question.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        question.click();
                     }
                 });
             });
@@ -256,6 +316,35 @@
                     
                     // Reset the form
                     this.reset();
+                });
+            }
+            
+            // Contact form submission handler
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple animation feedback
+                    const submitButton = this.querySelector('button[type="submit"]');
+                    const originalText = submitButton.textContent;
+                    submitButton.textContent = 'Sending...';
+                    submitButton.disabled = true;
+                    
+                    // Simulate form sending - in production, this would be an actual API call
+                    setTimeout(function() {
+                        submitButton.textContent = 'Message Sent!';
+                        submitButton.style.backgroundColor = '#4CAF50';
+                        
+                        // Show alert and reset form
+                        setTimeout(function() {
+                            alert('Thank you for your message! We will get back to you soon.');
+                            contactForm.reset();
+                            submitButton.textContent = originalText;
+                            submitButton.style.backgroundColor = '';
+                            submitButton.disabled = false;
+                        }, 1500);
+                    }, 1500);
                 });
             }
         });

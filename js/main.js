@@ -72,6 +72,33 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1500);
         });
     }
+    
+    // Handle smooth scrolling for on-page anchor links ONLY (not external page links)
+    // This ensures that links to contact.html don't auto-scroll to a section
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            // Only apply to same-page anchors (starting with #)
+            if (this.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    // Scroll to the element
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+    
+    // Fix for any CTA buttons going to contact page
+    // Make sure they go to the top of the contact page
+    document.querySelectorAll('a[href="contact.html"]').forEach(link => {
+        // Make sure the href is exactly contact.html without any fragments
+        link.setAttribute('href', 'contact.html');
+    });
 });
 
 // Utility function to animate elements when they come into view
